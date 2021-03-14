@@ -1,6 +1,6 @@
 # my global config
 global:
-  scrape_interval:     15m # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  scrape_interval:     5m # Set the scrape interval to every 15 seconds. Default is every 1 minute.
   evaluation_interval: 15m # Evaluate rules every 15 seconds. The default is every 1 minute.
   # scrape_timeout is set to the global default (10s).
 
@@ -14,7 +14,7 @@ rule_files:
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: 'prometheus'
-    scrape_interval:     5m
+    # scrape_interval:     5m
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
     static_configs:
@@ -22,6 +22,27 @@ scrape_configs:
 
   # Linux Server hosted on AWS
   - job_name: 'linux-server'
-    scrape_interval:     5s
+    # scrape_interval:     5s
     static_configs:
     - targets: ['18.222.143.13:9100']
+    
+  #JAVA Service
+  - job_name: 'spring-actuator'
+    metrics_path: '/actuator/prometheus'
+    # scrape_interval: 5s
+    static_configs:
+    - targets: ['127.0.0.1:8080']
+
+    #GOLANG Service --> http://localhost:9000/metrics/prometheus
+  - job_name: 'golang-server'
+    metrics_path: '/metrics/prometheus'
+    # scrape_interval: 5s
+    static_configs:
+    - targets: ['127.0.0.1:9000']
+
+  # NOde Server
+  - job_name: 'node-api'
+    metrics_path: '/swagger-stats/metrics'
+    # scrape_interval: 15m
+    static_configs:
+    - targets: ['cs-node-server.herokuapp.com']
