@@ -18,3 +18,8 @@ scrape_configs:
     # scheme defaults to 'http'.
     static_configs:
     - targets: ['cs-prometheus-server.herokuapp.com']
+
+  # Linux Server hosted on AWS
+  - job_name: 'linux-server'
+    static_configs:
+    - targets: ['172.31.35.37:9100']
