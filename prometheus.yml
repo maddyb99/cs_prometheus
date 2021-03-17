@@ -22,4 +22,4 @@ scrape_configs:
   # Linux Server hosted on AWS
   - job_name: 'linux-server'
     static_configs:
-    - targets: ['3.142.235.41:9100']
+    - targets: ['18.222.143.13:9100']
