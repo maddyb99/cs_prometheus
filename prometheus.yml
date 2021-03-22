@@ -31,7 +31,7 @@ scrape_configs:
     metrics_path: '/actuator/prometheus'
     # scrape_interval: 5s
     static_configs:
-    - targets: ['127.0.0.1:8080']
+    - targets: ['spring-application-server.herokuapp.com']
 
     #GOLANG Service --> http://localhost:9000/metrics/prometheus
   - job_name: 'golang-server'
