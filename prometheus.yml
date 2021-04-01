@@ -33,12 +33,11 @@ scrape_configs:
     static_configs:
     - targets: ['spring-application-server.herokuapp.com']
 
-    #GOLANG Service --> http://localhost:9000/metrics/prometheus
+    #GOLANG Service --> http://148.100.109.48:5005/metrics
   - job_name: 'golang-server'
-    metrics_path: '/metrics/prometheus'
-    # scrape_interval: 5s
+    metrics_path: '/metrics'
     static_configs:
-    - targets: ['127.0.0.1:9000']
+    - targets: ['148.100.109.48:5005']
 
   # NOde Server
   - job_name: 'node-api'
