@@ -1,3 +1,6 @@
 [submodule "servers/cs_node_server"]
 	path = servers/cs_node_server
 	url = https://github.com/maddyb99/cs_node_server
+[submodule "servers/golang-server"]
+	path = servers/golang-server
+	url = https://github.com/pankzkmr/golang-server
