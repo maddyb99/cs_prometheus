@@ -25,6 +25,13 @@ scrape_configs:
     # scrape_interval:     5s
     static_configs:
     - targets: ['18.222.143.13:9100']
+
+  
+  # Windows Server hosted on AWS
+  - job_name: 'windows-server'
+    # scrape_interval:     5s
+    static_configs:
+    - targets: ['3.143.23.112:9182']
     
   #JAVA Service
   - job_name: 'spring-actuator'
@@ -33,7 +40,7 @@ scrape_configs:
     static_configs:
     - targets: ['spring-application-server.herokuapp.com']
 
-    #GOLANG Service --> http://148.100.109.48:5005/metrics
+  #GOLANG Service --> http://148.100.109.48:5005/metrics
   - job_name: 'golang-server'
     metrics_path: '/metrics'
     static_configs:
