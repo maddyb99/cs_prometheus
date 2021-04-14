@@ -1,3 +1,7 @@
+# Architecture Diagram
+
+![arch_diag](arch_diag.png)
+
 # Execution 
 
 ## Locally:
